@@ -1,0 +1,2 @@
+[buildbot_pkg]
+test.example.com ansible_python_interpreter=python2 ansible_ssh_user=root

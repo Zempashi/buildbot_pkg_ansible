@@ -1,0 +1,26 @@
+- hosts: buildbot_pkg
+  roles:
+    - role: buildmaster_arch
+      buildmaster_name: 'build_pkg'
+      buildmaster_config_file: resources/buildbot_pkg_config.py
+      buildslaves:
+        arch_slave:
+            pass: 'pass'
+            type: 'standard'
+        repo_slave:
+            pass: 'pass'
+            type: 'standard'
+
+- hosts: buildbot_pkg
+  roles:
+    - role: buildslave_arch
+      buildmaster_name: 'build_pkg'
+      buildslave_name: 'arch_slave'
+
+- hosts: buildbot_pkg
+  roles:
+    - role: buildslave_repo_arch
+      buildmaster_name: 'build_pkg'
+      buildslave_name: 'repo_slave'
+      repo_path: /srv/repo
+      repo_name: meetup

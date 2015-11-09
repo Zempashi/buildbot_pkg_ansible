@@ -1,0 +1,8 @@
+- src: git+ssh://git@github.com/Zempashi/buildmaster_arch.git
+  name: buildmaster_arch
+
+- src: git+ssh://git@github.com/Zempashi/buildslave_arch.git
+  name: buildslave_arch
+
+- src: git+ssh://git@github.com/Zempashi/buildslave_repo_arch.git
+  name: buildslave_repo_arch
